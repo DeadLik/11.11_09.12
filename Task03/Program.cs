@@ -5,16 +5,19 @@
 // 46 -> нет
 // 161 -> да
 
-Console.WriteLine("Введите целое число: ");
+Console.Write("Введите целое число: ");
 int number = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите целое число: ");
+int number1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите целое число: ");
+int number2 = Convert.ToInt32(Console.ReadLine());
 
-bool MultiplicityTwoDigits(int num)
+bool MultiplicityTwoDigits(int num, int num1, int num2)
 {
-    return num % 7 == 0 && num % 23 == 0;
+    return num % num1 == 0 && num % num2 == 0;
 }
 
-bool result = MultiplicityTwoDigits(number);
-string resultStr = result ? "Да" : "Нет";
-
-Console.WriteLine($"{number} -> {resultStr}");
+bool result = MultiplicityTwoDigits(number, number1, number2);
+Console.Write($"{number} -> ");
+Console.WriteLine(result ? "Да" : "Нет");
 
