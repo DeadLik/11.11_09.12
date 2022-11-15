@@ -21,3 +21,4 @@ Console.WriteLine(res ? "Да" : "Нет");
 
 // Console.WriteLine(Math.Pow(5.2, 3.5));
 
+Console.WriteLine($"{1234567 / 10}");
