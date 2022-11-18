@@ -10,10 +10,12 @@ void Square(int numb)
     int count = 1;
     while (count <= numb)
     {
-        Console.WriteLine($"{count}  {count*count}");
+        Console.WriteLine($"{count}  {count * count}");
         count++;
     }
 }
 
-if(number > 0) Square(number);
+if (number > 0) Square(number);
 else Console.WriteLine("Число не является натуральным");
+
+Console.WriteLine(Math.Pow(3, 3));
