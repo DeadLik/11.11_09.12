@@ -21,6 +21,29 @@ int[] CreateArrayRndInt(int size, int min, int max)
     return array;
 }
 
+double[] CreateArrayRndDouble(int size, int min, int max)
+{
+    double[] array = new double[size];
+    Random rnd = new Random();
+    for (int i = 0; i < array.Length; i++)
+    {
+        double num = rnd.NextDouble() * (max - min) + min;
+        array[i] = Math.Round(num, 1);
+    }
+    return array;
+}
+
+void PrintArrayDouble(double[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
+        else Console.Write($"{array[i]}");
+    }
+    Console.WriteLine("]");
+}
+
 void PrintArray(int[] array)
 {
     Console.Write("[");
@@ -48,9 +71,36 @@ int GetSumNegativeElem(int[] array)
     return sum;
 }
 
+double GetSumPositiveElemDouble(double[] array)
+{
+    double sum = 0;
+    for (int i = 0; i < array.Length; i++)
+        if(array[i] > 0) sum += array[i]; // sum = sum + array[i];
+    return sum;
+}
+
+double GetSumNegativeElemDouble(double[] array)
+{
+    double sum = 0;
+    for (int i = 0; i < array.Length; i++)
+        if(array[i] < 0) sum += array[i]; // sum = sum + array[i];
+    return sum;
+}
+
 int[] arr = CreateArrayRndInt(12, -9, 9);
 PrintArray(arr);
+
+double[] arrDouble = CreateArrayRndDouble(12, -9, 9);
+PrintArrayDouble(arrDouble);
+
 int sumPositive = GetSumPositiveElem(arr);
 int sumNegative = GetSumNegativeElem(arr);
+
+double sumPositiveDouble = GetSumPositiveElemDouble(arrDouble);
+double sumNegativeDouble = GetSumNegativeElemDouble(arrDouble);
+
 Console.WriteLine($"Сумма положительных чисел = {sumPositive}");
 Console.WriteLine($"Сумма отрицательных чисел = {sumNegative}");
+
+Console.WriteLine($"Сумма положительных чисел тип double = {sumPositiveDouble}");
+Console.WriteLine($"Сумма отрицательных чисел тип double = {sumNegativeDouble}");
