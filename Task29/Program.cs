@@ -77,3 +77,23 @@ PrintMatrix(array2D);
 Console.WriteLine();
 int[] arr = FindIndex(array2D);
 PrintMatrix1(array2D, arr);
+
+
+// int[,,] CreateMatrixRndInt1(int rows, int columns, int depth, int min, int max) // Метод создания трёхмерного массива
+// {
+//     int[,,] matrix = new int[rows, columns, depth]; // 0, 1
+//     Random rnd = new Random();
+
+//     for (int i = 0; i < matrix.GetLength(0); i++) //2
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < matrix.GetLength(2); k++)
+//             {
+//                 matrix[i, j, k] = rnd.Next(min, max + 1); // 2- 3
+//             }
+            
+//         }
+//     }
+//     return matrix;
+// }
